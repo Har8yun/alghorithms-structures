@@ -9,11 +9,10 @@
 export default class Stack {
     #items = [];
 
-    constructor(initialVal) {
-        if (initialVal) {
-            this.#items.push(initialVal);
+    constructor(initialItem) {
+        if (initialItem) {
+            this.#items.push(initialItem);
         }
-        return this.size;
     }
 
     get size() {
@@ -25,7 +24,7 @@ export default class Stack {
     }
 
     remove() {
-        return this.#items.pop();
+        return this.size && this.#items.pop();
     }
 
     isEmpty() {
@@ -33,7 +32,7 @@ export default class Stack {
     }
 
     peek() {
-        return this.#items[this.size - 1];
+        return this.size && this.#items.at(-1);
     }
 
     printStack() {
