@@ -14,6 +14,10 @@ export default class Stack {
      * @param initialItem
      */
     constructor(initialItem) {
+        if (!new.target) {
+            throw new Error("Constructor Stack requires 'new'")
+        }
+
         if (initialItem) {
             this.#items.push(initialItem);
         }
