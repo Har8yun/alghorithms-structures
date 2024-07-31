@@ -9,30 +9,59 @@
 export default class Stack {
     #items = [];
 
+    /**
+     *
+     * @param initialItem
+     */
     constructor(initialItem) {
         if (initialItem) {
             this.#items.push(initialItem);
         }
     }
 
+    /**
+     *
+     * @returns {number}
+     */
     get size() {
         return this.#items.length;
     }
 
+    /**
+     *
+     * @param item
+     * @returns {number}
+     */
     add(item) {
         return this.#items.push(item);
     }
 
+    /**
+     *
+     * @returns {0|*}
+     */
     remove() {
-        return this.size && this.#items.pop();
+        if (this.size) {
+            return this.#items.pop();
+        }
     }
 
+    /**
+     *
+     * @returns {boolean}
+     */
     isEmpty() {
         return !!this.size;
     }
 
+    /**
+     *
+     * @returns {*}
+     */
     peek() {
-        return this.size && this.#items.at(-1);
+        if (this.size) {
+            return this.#items.at(-1);
+        }
     }
 
     printStack() {
