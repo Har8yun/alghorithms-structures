@@ -74,5 +74,3 @@ export default class Stack {
         }
     }
 }
-
-window.Stack = Stack;
